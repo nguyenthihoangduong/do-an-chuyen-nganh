@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PetproShopConnection.LoaiSanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 60%;
+        margin: auto;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #3a3a3a;
+        }
+
+        #customers tr:hover {
+            background-color: #BDBDBD;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #2a9fd6;
+            color: white;
+        }
+</style>
+<h2 style="color:#000000;text-align:center">Quản Lý Loại Sản Phẩm</h2>
+<table id="customers">
+    <tr>
+        <th>Mã Loại Sản phẩm</th>
+        <th>Tên Loại Sản Phẩm</th>
+        <th>Tình Trạng</th>
+        <th colspan="2">
+            <a href="@Url.Action("Create","LoaiSanPhamAdmin")"><img src="~/Asset/images1/AddNSX.png" text-align center /></a>
+        </th>
+    </tr>
+    @foreach (var @item in Model)
+    {
+        <tr>
+            <td>@item.MaLoaiSP</td>
+            <td>@item.TenLoaiSP</td>
+            <td>@item.TinhTrang</td>
+            <td><a href="@Url.Action("Edit","LoaiSanPhamAdmin", new {id = @item.MaLoaiSP })"><img src="~/Asset/images1/EditNSX.png" text-align center /></a></td>
+            <td><a href="@Url.Action("XoaTamThoiLSP","LoaiSanPhamAdmin" , new { id = @item.MaLoaiSP})"><img src="~/Asset/images1/DeleteNSX.png" text-align center /></a></td>
+        </tr>
+    }
+
+
+</table>
+
+
+

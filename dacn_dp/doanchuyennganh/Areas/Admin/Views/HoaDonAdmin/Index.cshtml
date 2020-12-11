@@ -1,0 +1,82 @@
+﻿@model IEnumerable<PetproShopConnection.ThanhToan>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 60%;
+        margin: auto;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #3a3a3a;
+        }
+
+        #customers tr:hover {
+            background-color: #BDBDBD;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #2a9fd6;
+            color: white;
+        }
+</style>
+<h2 style="color:#000000;text-align:center"> Quản Lý Đơn Đặt Hàng </h2>
+<div class="col-sm-12">
+    <table style="width:100%;" id="customers">
+        <tr>
+            <th>Mã TT</th>
+            <th>Họ Tên KH</th>
+            <th>SĐT</th>
+            <th>Email</th>
+            <th>Địa Chỉ</th>
+            <th>Tỉnh/Thành</th>
+            <th>Quận/Huyện</th>
+            <th>Ghi Chú</th>
+            <th>Tình Trạng</th>
+            <th>Ma PTTT</th>
+
+            <th colspan="3">
+                <a href="@Url.Action("Create","HoaDonAdmin")"><img src="~/Asset/images1/AddNSX.png" text-align center /></a>
+            </th>
+        </tr>
+        @foreach (var @item in Model)
+        {
+            <tr>
+                <td>@item.MaTT</td>
+                <td>@item.HoTenKH</td>
+                <td>@item.SoDT</td>
+                <td>@item.Email</td>
+                <td>@item.DiaChiNhanHang</td>
+                <td>@item.TinhThanh</td>
+                <td>@item.QuanHuyen</td>
+                <td>@item.GhiChu</td>
+                <td>@item.TinhTrang</td>
+                <td>@item.MaPTTT</td>
+                @*<td><img src="~/Asset/images1/@item.HinhChinh" style="width:60px; height:60px;" /></td>*@
+                <td><a href="@Url.Action("Edit","HoaDonAdmin", new {id = @item.MaTT })"><img src="~/Asset/images1/EditNSX.png" text-align center /></a></td>
+                <td><a href="@Url.Action("XoaTamThoi","HoaDonAdmin" , new { id = @item.MaTT })"><img src="~/Asset/images1/DeleteNSX.png" text-align center /></a></td>
+                <td><a href="@Url.Action("XoaTamThoi","HoaDonAdmin" , new { id = @item.MaTT })"><i style="font-size:25px;color:#00FF00" class="fa fa-eye" aria-hidden="true"></i></a></td>
+
+            </tr>
+        }
+
+
+    </table>
+
+</div>
+
+

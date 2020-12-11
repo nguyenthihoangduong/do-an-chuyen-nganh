@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!-- Header Area End Here -->
+<!-- Begin Slider With Banner Area -->
+<div class="slider-with-banner">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Slider Area -->
+            <div class="col-lg-8 col-md-8">
+                <div class="slider-area">
+                    <div class="slider-active owl-carousel">
+                        <!-- Begin Single Slide Area -->
+
+                        <div class="single-slide align-center-left  ">
+                            <img src="~/Asset/images1/h10.png" alt="">
+                        </div>
+
+                        <!-- Single Slide Area End Here -->
+                        <!-- Begin Single Slide Area -->
+                        <div class="single-slide align-center-left ">
+                            <img src="~/Asset/images1/h11.png" alt="">
+                        </div>
+                        <!-- Single Slide Area End Here -->
+                        <!-- Begin Single Slide Area -->
+                        <div class="single-slide align-center-left ">
+                            <img src="~/Asset/images1/h12.png" alt="">                            
+                        </div>
+                        <div class="single-slide align-center-left ">
+                            <img src="~/Asset/images1/h13.png" alt="">
+                        </div>
+                        <!-- Single Slide Area End Here -->
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Area End Here -->
+            <!-- Begin Li Banner Area -->
+            <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+                <div class="li-banner">
+                    
+                    <iframe style="width:100%; height:220px" src="https://www.youtube.com/embed/TpB2YI1Wctw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+                   
+                </div>
+                <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+                    
+                    <iframe style="width:100%; height:220px" src="https://www.youtube.com/embed/wdWkMqYmMYM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+                    
+                </div>
+            </div>
+            <!-- Li Banner Area End Here -->
+        </div>
+    </div>
+</div>
+<!-- Slider With Banner Area End Here -->
+<!-- Begin Product Area -->
+<div class="product-area pt-60 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="li-product-tab">
+                    <ul class="nav li-product-menu">
+                        <li><a class="active" data-toggle="tab" href="#li-new-product"><span>Sản Phẩm Mới</span></a></li>
+                        <li><a data-toggle="tab" href="#li-bestseller-product"><span>Sản Phẩm Hót</span></a></li>
+                        <li><a data-toggle="tab" href="#li-featured-product"><span>Khuyến Mãi</span></a></li>
+                    </ul>
+                </div>
+                <!-- Begin Li's Tab Menu Content Area -->
+            </div>
+        </div>
+        <div class="tab-content">
+            <div id="li-new-product" class="tab-pane active show" role="tabpanel">
+                @Html.Partial("_SPmoi", doanchuyennganh.Models.BUS.PetproShopBUS.Top5New())
+            </div>
+            <div id="li-bestseller-product" class="tab-pane" role="tabpanel">
+                @Html.Partial("_SPmoi", doanchuyennganh.Models.BUS.PetproShopBUS.Top5Hot())
+            </div>
+            <div id="li-featured-product" class="tab-pane" role="tabpanel">
+                @Html.Partial("_SPKM", doanchuyennganh.Models.BUS.PetproShopBUS.TopKM())
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="li-static-banner">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Single Banner Area -->
+            <div class="col-lg-4 col-md-4 text-center">
+
+                <a>
+                    <img src="~/Asset/images1/hpetpro.jpg" width="100%" height="auto">
+                </a>
+                @*<iframe style="width:100%; height:220px" src="https://www.youtube.com/embed/TpB2YI1Wctw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>*@
+
+            </div>
+            <!-- Single Banner Area End Here -->
+            <!-- Begin Single Banner Area -->
+            <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+
+                <a>
+                    <img src="~/Asset/images1/hpetpro.jpg" width="100%" height="auto">
+                </a>
+
+                @*<iframe style="width:100%; height:220px" src="https://www.youtube.com/embed/wdWkMqYmMYM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>*@
+
+            </div>
+            <!-- Single Banner Area End Here -->
+            <!-- Begin Single Banner Area -->
+            <div class="col-lg-4 col-md-4 text-center pt-xs-30">
+
+                
+                <a>
+                    <img src="~/Asset/images1/hpetpro.jpg" width="100%" height="auto">                    
+                </a>
+               
+
+                @*<iframe style="width:100%; height:220px" src="https://www.youtube.com/embed/m7-J0vZOS6U?list=RDCMUCij19II32Olbu8_vghmYNCA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>*@
+
+            </div>
+            <!-- Single Banner Area End Here -->
+        </div>
+    </div>
+</div>
+
+@*<div class="li-static-home">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <img src="~/Asset/images1/logo2.png" width="100%" height="150" alt="">
+
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<section class="product-area li-laptop-product pt-60 pb-45">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Li's Section Area -->
+            <div class="col-lg-12">
+                <div class="li-section-title">
+                    <h2>
+                        <span>Thời Trang</span>
+                    </h2>
+                    
+                </div>
+                @Html.Partial("_SPmoi", doanchuyennganh.Models.BUS.PetproShopBUS.ThoiTrangHome())
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Li's Laptop Product Area End Here -->
+<!-- Begin Li's TV & Audio Product Area -->
+<section class="product-area li-laptop-product li-tv-audio-product pb-45">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Li's Section Area -->
+            <div class="col-lg-12">
+                <div class="li-section-title">
+                    <h2>
+                        <span>Dụng Cụ Hàng Ngày</span>
+                    </h2>
+                    
+                </div>
+
+                @Html.Partial("_SPmoi", doanchuyennganh.Models.BUS.PetproShopBUS.DungCuHome())
+
+            </div>
+            <!-- Li's Section Area End Here -->
+        </div>
+    </div>
+</section>
+<!-- Li's TV & Audio Product Area End Here -->
+<!-- Begin Li's Static Home Area -->
+<div class="li-static-home">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <img src="~/Asset/images1/petpro.jpg" width="100%" height="200" alt="">
+                                             
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Li's Static Home Area End Here -->
+<!-- Begin Li's Trending Product Area -->
+<section class="product-area li-trending-product pt-60 pb-45">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Li's Tab Menu Area -->
+            <div class="col-lg-12">
+                <div class="li-product-tab li-trending-product-tab">
+                    <h2>
+                        <span>Thức Ăn</span>
+                    </h2>
+                    
+                </div>
+
+                <!-- Begin Li's Tab Menu Content Area -->
+                @Html.Partial("_SPmoi", doanchuyennganh.Models.BUS.PetproShopBUS.ThucAnHome())
+                <!-- Tab Menu Content Area End Here -->
+            </div>
+            <!-- Tab Menu Area End Here -->
+        </div>
+    </div>
+</section>
+<!-- Li's Trending Product Area End Here -->
+<!-- Begin Li's Trendding Products Area -->
+<section class="product-area li-laptop-product li-trendding-products best-sellers pb-45">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Li's Section Area -->
+            <div class="col-lg-12">
+                <div class="li-section-title">
+                    <h2>
+                        <span>Sức Khỏe</span>
+                    </h2>
+                </div>
+
+                @Html.Partial("_SPmoi", doanchuyennganh.Models.BUS.PetproShopBUS.SucKhoeHome())
+            </div>
+            <!-- Li's Section Area End Here -->
+        </div>
+    </div>
+</section>
+<!-- Li's Trendding Products Area End Here -->
+<!-- Begin Footer Area -->

@@ -1,0 +1,195 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        background: white;
+        color: black;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=number], select {
+        width: 100%;
+        color: black;
+        background: white;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #2a9fd6;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #4CAF50;
+        }
+</style>
+
+@using (Html.BeginForm("Create", "ThanhToan", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row">
+            <section class="col-lg- col-md- col-sm-12 col-xs-12 main-column">
+                <div id="content">
+
+                    <form action="" method="post" accept-charset="utf-8">
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                @*<div class="container">
+                                    <div class="row">
+                                    <div id="content">*@
+                                <div style="text-align:center" class="col-sm-9">
+                                    <h3>Thông tin giao hàng</h3>
+                                </div>
+                                @*<div class="col-sm-7">*@
+
+                                <table style="width:90%; text-align:left; background:white; color:black;">
+                                    <tr>
+                                        <td>Họ Tên Khách Hàng</td>
+                                        <td> <input style="width:300px; float:left; height:35px " type="text" name="HoTenKH" required /></td>
+                                        <td rowspan="13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Số Điện Thoại</td>
+                                        <td> <input style="width:300px; float:left; height:35px " type="text" name="SoDT" required /></td>
+                                        <td rowspan="13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td> <input style="width:300px; float:left; height:35px " type="text" name="Email" required /></td>
+                                        <td rowspan="13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa Chỉ</td>
+                                        <td> <input style="width:300px; float:left; height:35px " type="text" name="DiaChiNhanHang" required /></td>
+                                        <td rowspan="13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tỉnh/Thành Phố</td>
+                                        <td> <input style="width:300px; float:left; height:35px " type="text" name="TinhThanh" required /></td>
+                                        <td rowspan="13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quận/Huyện</td>
+                                        <td> <input style="width:300px; float:left; height:35px " type="text" name="QuanHuyen" required /></td>
+                                        <td rowspan="13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ghi Chú</td>
+                                        <td> <input style="width:300px; float:left; height:35px " type="text" name="GhiChu" required /></td>
+                                        <td rowspan="13"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phương Thức Thanh Toán</td>
+                                        <td>@Html.DropDownList("MaPTTT", null, new { @style = "float:left; width:300px;" })</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <input style="height:40px; width:300px; margin-left:25%;background:#016ABC;color:#fff;border:1px solid #eee;border-radius:20px;box-shadow:5px 5px 5px #eee;" type="submit" name="btn_ThemSanPham" value="Lưu Thông Tin" />
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="box productcarousel">
+                                    <div class="box-heading"><h3 style="text-align:center">Phương thức thanh toán</h3></div>
+                                    <div class="box-content">
+                                        <div class="form-group">
+                                            <div id="section-payment-method" class="section">
+                                                <div class="section-content">
+                                                    <div class="content-box">
+                                                        <div class="radio-wrapper content-box-row" onclick="$('#banking-info').addClass('hidden');$('#cod-info').removeClass('hidden')">
+                                                            <label class="radio-label">
+
+                                                                <span style="color:#ff0000" class="radio-label-primary"><i class="fa fa-check" style="color:dodgerblue" aria-hidden="true"></i>Thanh toán khi giao hàng (COD)</span>
+                                                            </label>
+                                                        </div>
+                                                        <div id="cod-info" class="radio-wrapper content-box-row content-box-row-secondary">
+                                                            <div style="text-align:justify" class="blank-slate">
+                                                                - Với hóa đơn trên 300,000 và nơi nhận hàng dưới 10km thì shop sẽ free ship.
+                                                                - Khu vực ngoại thành, shop sẽ tính thêm tiền ship hoặc giao hàng bên dịch vụ.
+                                                                - Khu vực ở tỉnh shop không hỗ trợ phí ship, khách hàng tự thanh toán phí, phí ship phụ thuộc vào nhà xe hoặc dịch vụ.
+                                                            </div>
+                                                        </div>
+                                                        <div class="radio-wrapper content-box-row" onclick="$('#banking-info').removeClass('hidden');$('#cod-info').addClass('hidden')">
+                                                            <label class="radio-label">
+
+                                                                <span style="color:#ff0000" class="radio-label-primary"><i class="fa fa-check" style="color:dodgerblue" aria-hidden="true"></i>Chuyển khoản qua ngân hàng</span>
+                                                            </label>
+                                                        </div>
+                                                        <div id="banking-info" class="radio-wrapper content-box-row content-box-row-secondary hidden">
+                                                            <div style="text-align:justify" class="blank-slate">
+                                                                * Tên Tài Khoản: Đặng Thanh Thư
+                                                                * Vietcombank: 0251 0027 39028 - Chi nhánh Bình Tây
+                                                                * Vietinbank: 106004592085 - Chi nhánh Trảng Bàng
+                                                                * BIDV: 3681 00000 49881 - Chi nhánh Cộng Hòa
+                                                                * Argibank: 1606 2058 06984 - Chi nhánh An Phú
+                                                                * Sacombank: 0600 3758 0492 - Chi nhánh Q11
+                                                                * ACB: 1829 20599 - Chi nhánh Q10
+                                                                => Xin lưu ý: Khách hàng chuyển khoản vui lòng liên hệ 0915.49.2828 để xác nhận
+                                                            </div>
+                                                        </div>
+                                                        <div class="radio-wrapper content-box-row" onclick="$('#banking-info').removeClass('hidden');$('#cod-info').addClass('hidden')">
+                                                            <label class="radio-label">
+
+                                                                <span style="color:#ff0000" class="radio-label-primary"><i class="fa fa-check" style="color:dodgerblue" aria-hidden="true"></i>Chuyển khoản qua PayPal</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg- col-md- col-sm-12 col-xs-12 main-column">
+                                    <div class="row">
+                                        <div style="text-align:right" class="col-sm-6">
+                                            <div style="background-color:#ff0000;" class="btn btn-success"><a style="color:#ffffff;" href="http://localhost:57835/GioHang"><i class="fa fa-arrow-left" aria-hidden="true"></i>Quay lại giỏ hàng</a></div>
+                                        </div>
+                                        
+                                        <div style="text-align:right" class="col-sm-6">
+                                            <button type="submit" style="background-color:#eb8314" class="btn btn-success" name="btnOrder">Đặt hàng<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+}
+
+
+
+
+
+

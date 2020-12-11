@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        background: #CCFFFF;
+        color: black;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=number], select {
+        width: 100%;
+        color: black;
+        background: #CCFFFF;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #2a9fd6;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #4CAF50;
+        }
+</style>
+
+@using (Html.BeginForm("Create", "HoaDonAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table style="width:60%; margin:auto; background:white; color:black">
+        <tr>
+            <td>Mã Thanh Toán</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="MaTT" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Họ Tên Khách Hàng</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="HoTenKH" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Số Điện Thoại</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="SoDT" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="Email" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Địa Chỉ</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="DiaChiNhanHang" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Tỉnh/Thành Phố</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="TinhThanh" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Quận/Huyện</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="QuanHuyen" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Ghi Chú</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="GhiChu" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Tình Trạng</td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="TinhTrang" required /></td>
+            <td rowspan="13"></td>
+        </tr>
+        <tr>
+            <td>Mã Phương Thức Thanh Toán</td>
+            <td>@Html.DropDownList("MaPTTT", null, new { @style = "float:left; width:300px;" })</td>
+            
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <input style="height:40px; width:300px; margin-left:25%;
+             background:#016ABC;color:#fff;border:1px solid #eee;border-radius:20px;box-shadow:5px 5px 5px #eee;" type="submit" name="btn_ThemSanPham" value="Xác Nhận Chỉnh Sửa" />
+
+            </td>
+        </tr>
+    </table>
+}
+
+
+
+
+
+

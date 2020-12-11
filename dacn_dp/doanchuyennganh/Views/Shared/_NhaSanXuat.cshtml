@@ -1,0 +1,19 @@
+﻿@*@model IEnumerable<PetproShopConnection.NhaSanXuat>*@
+<li class="megamenu-static-holder">
+    <a href="index.html">Nhà Sản Xuất</a>
+    <ul class="hb-dropdown">
+        <li>
+
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li><a href="@Url.Action("Index", "NhaSanXuat", new { id = @item.MaNSX })">@item.TenNSX</a></li>
+                }
+            </ul>
+        </li>
+
+    </ul>
+</li>
+
+
+

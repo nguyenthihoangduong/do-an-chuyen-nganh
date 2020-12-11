@@ -1,0 +1,98 @@
+﻿@model PetproShopConnection.SanPham
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<script src="~/Areas/AssetAdmin/js/product/previewFile.js"></script>
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        background: #CCFFFF;
+        color:black;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=number], select {
+        width: 100%;
+        color:black;
+        background: #CCFFFF;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #2a9fd6;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #4CAF50;
+        }
+</style>
+
+@using (Html.BeginForm("Delete", "SanPhamAdmin", FormMethod.Post))
+{
+    <table style="width:75%; margin:auto; background:white; color:black">
+        <tr>
+            <td>Mã Sản Phẩm</td>
+            <td> <input style="width:300px; float:left; height:35px " maxlength="11" type="text" name="MaSP" required readonly value="@Model.MaSP" /></td>
+            <td rowspan="4">
+                <div>
+                    <img id="target" class="img" src="~/Asset/images1/@Model.HinhChinh" alt="your image" style="float:right; width:320px; height:300px;" required>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Tên Sản Phẩm</td>
+            <td><input style="width:300px; float:left; height:35px " type="text" maxlength="11" required readonly value="@Model.TenSP" /></td>
+        </tr>
+
+
+        <tr>
+            <td>Giá</td>
+            <td><input style="width:300px; float:left; height:35px" type="number" required readonly value="@Model.Gia"></td>
+        </tr>
+        <tr>
+            <td>Mô tả</td>
+            <td><input style="width:300px; float:left; height:35px" type="text" required readonly value="@Model.MoTa"></td>
+        </tr>
+        <tr>
+            <td>Chức Năng</td>
+            <td><input style="width:300px; float:left; height:35px" type="text" required readonly @Model.ChucNang></td>
+        </tr>
+        <tr>
+            <td>Ghi Chú</td>
+            <td><input style="width:300px; float:left; height:35px" type="text" required readonly value="@Model.GhiChu"></td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <input style="height:40px; width:300px; margin-left:25%;
+             background:#016ABC;color:#fff;border:1px solid #eee;border-radius:20px;box-shadow:5px 5px 5px #eee;" type="submit" name="btn_ThemSanPham" value="Xác Nhận khóa" />
+
+            </td>
+        </tr>
+    </table>
+}
+
+
+
+

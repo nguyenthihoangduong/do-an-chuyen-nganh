@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*<div class="breadcrumb-area">*@
+<div class="container">
+    <div class="breadcrumb-content">
+        <ul>
+            <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+            <li>@Html.ActionLink("Khuyến Mãi", "Index", "KhuyenMai")</li>
+        </ul>
+    </div>
+</div>
+@*</div>*@
+<div class="content-wraper pt-60 pb-60 pt-sm-30">
+    <div class="container">
+        <div class="row">
+            @*---------------------------------------------------------------------------------------------------------------------------------------*@
+
+            @Html.Partial("_KhuyenMai", doanchuyennganh.Models.BUS.PetproShopBUS.KhuyenMaiHome())
+
+            @*---------------------------------------------------------------------------------------------------------------------------------------*@
+
+
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+

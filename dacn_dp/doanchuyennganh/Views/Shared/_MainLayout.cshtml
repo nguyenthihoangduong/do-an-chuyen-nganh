@@ -1,0 +1,456 @@
+﻿
+@{
+    ViewBag.Title = "_MainLayout";
+}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+<!-- index28:48-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PET-PRO Thú Cưng</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Asset/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Asset/~/Asset/images/favicon.png">
+    <!-- Material Design Iconic Font-V2.2.0 -->
+    <link rel="stylesheet" href="~/Asset/css/material-design-iconic-font.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Asset/css/font-awesome.min.css">
+    <!-- Font Awesome Stars-->
+    <link rel="stylesheet" href="~/Asset/css/fontawesome-stars.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="~/Asset/css/meanmenu.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="~/Asset/css/owl.carousel.min.css">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="~/Asset/css/slick.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/Asset/css/animate.css">
+    <!-- Jquery-ui CSS -->
+    <link rel="stylesheet" href="~/Asset/css/jquery-ui.min.css">
+    <!-- Venobox CSS -->
+    <link rel="stylesheet" href="~/Asset/css/venobox.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="~/Asset/css/nice-select.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="~/Asset/css/magnific-popup.css">
+    <!-- Bootstrap V4.1.3 Fremwork CSS -->
+    <link rel="stylesheet" href="~/Asset/css/bootstrap.min.css">
+    <!-- Helper CSS -->
+    <link rel="stylesheet" href="~/Asset/css/helper.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="~/Asset/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Asset/css/responsive.css">
+    <!-- Modernizr js -->
+    <script src="~/Asset/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Begin Body Wrapper -->
+    <div class="body-wrapper">
+        <!-- Begin Header Area -->
+        <header>
+            <!-- Begin Header Top Area -->
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <!-- Begin Header Top Left Area -->
+                        <div class="col-lg-3 col-md-4">
+                            <div class="header-top-left">
+                                <ul class="phone-wrap">
+                                    <li><i class="fa fa-phone"></i><a href="tel:02838612977">(028) 38 612977</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Header Top Left Area End Here -->
+                        <!-- Begin Header Top Right Area -->
+                        <div class="col-lg-9 col-md-8">
+                            <div class="header-top-right">
+                                <ul class="ht-menu">
+                                    <!-- Begin Setting Area -->
+                                    <li>
+                                        <div class="ht-setting-trigger"><i class="fa fa-user"></i><span>Đăng Ký/Đăng Nhập</span></div>
+                                        <div class="setting ht-setting">
+                                            <ul class="ht-setting-list">
+                                                @Html.Partial("_LoginPartial")
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Header Top Right Area End Here -->
+                    </div>
+                </div>
+            </div>
+            <!-- Header Top Area End Here -->
+            <!-- Begin Header Middle Area -->
+            <div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
+                <div class="container">
+                    <div class="row">
+                        <!-- Begin Header Logo Area -->
+                        <div class="col-lg-3">
+                            <div class="logo pb-sm-30 pb-xs-30">
+                                <a href="index.html">
+                                    <img src="~/Asset/images1/logo2.png" width="260" height="100" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Header Logo Area End Here -->
+                        <!-- Begin Header Middle Right Area -->
+                        <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
+                            <!-- Begin Header Middle Searchbox Area -->
+                            <form action="#" class="hm-searchbox">
+                                <select class="nice-select select-search-category">
+                                    <option value="0">All</option>
+                                    <option value="10">Laptops</option>
+                                    <option value="17">- -  Prime Video</option>
+                                    <option value="20">- - - -  All Videos</option>
+                                    <option value="21">- - - -  Blouses</option>
+                                    <option value="22">- - - -  Evening Dresses</option>
+                                    <option value="23">- - - -  Summer Dresses</option>
+                                    <option value="24">- - - -  T-shirts</option>
+                                    <option value="25">- - - -  Rent or Buy</option>
+                                    <option value="26">- - - -  Your Watchlist</option>
+                                    <option value="27">- - - -  Watch Anywhere</option>
+                                    <option value="28">- - - -  Getting Started</option>
+                                    <option value="18">- - - -  Computers</option>
+                                    <option value="29">- - - -  More to Explore</option>
+                                    <option value="30">- - - -  TV &amp; Video</option>
+                                    <option value="31">- - - -  Audio &amp; Theater</option>
+                                    <option value="32">- - - -  Camera, Photo </option>
+                                    <option value="33">- - - -  Cell Phones</option>
+                                    <option value="34">- - - -  Headphones</option>
+                                    <option value="35">- - - -  Video Games</option>
+                                    <option value="36">- - - -  Wireless Speakers</option>
+                                    <option value="19">- - - -  Electronics</option>
+                                    <option value="37">- - - -  Amazon Home</option>
+                                    <option value="38">- - - -  Kitchen &amp; Dining</option>
+                                    <option value="39">- - - -  Furniture</option>
+                                    <option value="40">- - - -  Bed &amp; Bath</option>
+                                    <option value="41">- - - -  Appliances</option>
+                                    <option value="11">TV &amp; Audio</option>
+                                    <option value="42">- -  Chamcham</option>
+                                    <option value="45">- - - -  Office</option>
+                                    <option value="47">- - - -  Gaming</option>
+                                    <option value="48">- - - -  Chromebook</option>
+                                    <option value="49">- - - -  Refurbished</option>
+                                    <option value="50">- - - -  Touchscreen</option>
+                                    <option value="51">- - - -  Ultrabooks</option>
+                                    <option value="52">- - - -  Blouses</option>
+                                    <option value="43">- -  Sanai</option>
+                                    <option value="53">- - - -  Hard Drives</option>
+                                    <option value="54">- - - -  Graphic Cards</option>
+                                    <option value="55">- - - -  Processors (CPU)</option>
+                                    <option value="56">- - - -  Memory</option>
+                                    <option value="57">- - - -  Motherboards</option>
+                                    <option value="58">- - - -  Fans &amp; Cooling</option>
+                                    <option value="59">- - - -  CD/DVD Drives</option>
+                                    <option value="44">- -  Meito</option>
+                                    <option value="60">- - - -  Sound Cards</option>
+                                    <option value="61">- - - -  Cases &amp; Towers</option>
+                                    <option value="62">- - - -  Casual Dresses</option>
+                                    <option value="63">- - - -  Evening Dresses</option>
+                                    <option value="64">- - - -  T-shirts</option>
+                                    <option value="65">- - - -  Tops</option>
+                                    <option value="12">Smartphone</option>
+                                    <option value="66">- -  Camera Accessories</option>
+                                    <option value="68">- - - -  Octa Core</option>
+                                    <option value="69">- - - -  Quad Core</option>
+                                    <option value="70">- - - -  Dual Core</option>
+                                    <option value="71">- - - -  7.0 Screen</option>
+                                    <option value="72">- - - -  9.0 Screen</option>
+                                    <option value="73">- - - -  Bags &amp; Cases</option>
+                                    <option value="67">- -  XailStation</option>
+                                    <option value="74">- - - -  Batteries</option>
+                                    <option value="75">- - - -  Microphones</option>
+                                    <option value="76">- - - -  Stabilizers</option>
+                                    <option value="77">- - - -  Video Tapes</option>
+                                    <option value="78">- - - -  Memory Card Readers</option>
+                                    <option value="79">- - - -  Tripods</option>
+                                    <option value="13">Cameras</option>
+                                    <option value="14">headphone</option>
+                                    <option value="15">Smartwatch</option>
+                                    <option value="16">Accessories</option>
+                                </select>
+                                <input type="text" placeholder="Enter your search key ...">
+                                <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <!-- Header Middle Searchbox Area End Here -->
+                            <!-- Begin Header Middle Right Area -->
+                            <div class="row">
+                                <div class="col-lg-12 pl-0 ml-sm-15 ml-xs-15  ">
+
+                                    <li style="text-align:right;" class="col-lg-12">
+
+                                        
+                                            @*<span style="color:#ff0000;font-size:30px" <a href="http://localhost:57835/GioHang/Index" class="pt-10">Giỏ Hàng</a></span>*@
+                                        <span style="background-color:#ff0000;" class="btn btn-success"><i class="fa fa-cart-plus" aria-hidden="true"></i><a style="color:#ffffff;" href="http://localhost:57835/GioHang/Index">Giỏ Hàng</a></span>
+
+                                        <span></span>
+
+                                    </li>
+                                    
+                                </div>
+                            </div>
+
+
+                            <!-- Header Middle Right Area End Here -->
+                        </div>
+                        <!-- Header Middle Right Area End Here -->
+                    </div>
+                </div>
+            </div>
+            <!-- Header Middle Area End Here -->
+            <!-- Begin Header Bottom Area -->
+            <div class="header-bottom header-sticky d-none d-lg-block d-xl-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- Begin Header Bottom Menu Area -->
+                            <div class="hb-menu">
+                                <nav>
+                                    <ul>
+                                        <li class="dropdown-holder">
+                                            @Html.ActionLink("Trang Chủ", "Index", "Home")
+                                        </li>
+
+                                        <li class="megamenu-holder">
+                                            <a>Giới Thiệu</a>
+                                            <ul class="megamenu hb-megamenu">
+                                                <li>
+
+                                                    <ul>
+                                                        <li>@Html.ActionLink("Câu Chuyện PetPro", "Index", "CauChuyenPetPro")</li>
+                                                        <li>@Html.ActionLink("Về Chúng Tôi", "Index", "VeChungToi")</li>
+
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="megamenu-holder">
+                                            <a>Dịch Vụ</a>
+                                            <ul class="megamenu hb-megamenu">
+                                                <li>
+
+                                                    <ul>
+                                                        <li>@Html.ActionLink("Thú Y Tại Nhà", "Index", "ThuYTaiNha")</li>
+                                                        <li>@Html.ActionLink("Bảo Hiểm Sức Khỏe", "Index", "BaoHiemSucKhoe")</li>
+                                                        <li>@Html.ActionLink("Chăm Sóc Sức Khỏe", "Index", "ChamSocSucKhoe")</li>
+                                                        <li>@Html.ActionLink("Spa", "Index", "Spa")</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+
+                                                    <ul>
+                                                        <li>@Html.ActionLink("Phối Giống", "Index", "PhoiGiong")</li>
+                                                        <li>@Html.ActionLink("Triệt Sản", "Index", "TrietSan")</li>
+                                                        <li>@Html.ActionLink("Khách Sạn", "Index", "KhachSan")</li>
+                                                        <li>@Html.ActionLink("Hỏa Táng Thú Cưng", "Index", "HoaTangThuCung")</li>
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+
+                                        @Html.Partial("_CuaHang", doanchuyennganh.Models.BUS.CuaHangBUS.DanhSach())
+
+                                        @Html.Partial("_NhaSanXuat", doanchuyennganh.Models.BUS.NhaSanXuatBUS.DanhSach())
+
+                                        <li>@Html.ActionLink("Khuyến Mãi", "Index", "KhuyenMai")</li>
+                                        <li>@Html.ActionLink("Tuyển Dụng", "Index", "TuyenDung")</li>
+                                        <li>@Html.ActionLink("Liên Hệ", "Index", "LienHe")</li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- Header Bottom Menu Area End Here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Bottom Area End Here -->
+            <!-- Begin Mobile Menu Area -->
+            <div class="mobile-menu-area d-lg-none d-xl-none col-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="mobile-menu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area End Here -->
+        </header>
+        @RenderBody()
+        @{ Html.RenderPartial("_Footer");}
+        @RenderSection("scripts", required: false)
+        <!-- Footer Area End Here -->
+        <!-- Begin Quick View | Modal Area -->
+        <div class="modal fade modal-wrapper" id="exampleModalCenter">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="modal-inner-area row">
+                            <div class="col-lg-5 col-md-6 col-sm-6">
+                                <!-- Product Details Left -->
+                                <div class="product-details-left">
+                                    <div class="product-details-images slider-navigation-1">
+                                        <div class="lg-image">
+                                            <img src="~/Asset/~/Asset/images/product/large-size/1.jpg" alt="product image">
+                                        </div>
+                                        <div class="lg-image">
+                                            <img src="~/Asset/~/Asset/images/product/large-size/2.jpg" alt="product image">
+                                        </div>
+                                        <div class="lg-image">
+                                            <img src="~/Asset/~/Asset/images/product/large-size/3.jpg" alt="product image">
+                                        </div>
+                                        <div class="lg-image">
+                                            <img src="~/Asset/~/Asset/images/product/large-size/4.jpg" alt="product image">
+                                        </div>
+                                        <div class="lg-image">
+                                            <img src="~/Asset/~/Asset/images/product/large-size/5.jpg" alt="product image">
+                                        </div>
+                                        <div class="lg-image">
+                                            <img src="~/Asset/~/Asset/images/product/large-size/6.jpg" alt="product image">
+                                        </div>
+                                    </div>
+                                    <div class="product-details-thumbs slider-thumbs-1">
+                                        <div class="sm-image"><img src="~/Asset/~/Asset/images/product/small-size/1.jpg" alt="product image thumb"></div>
+                                        <div class="sm-image"><img src="~/Asset/~/Asset/images/product/small-size/2.jpg" alt="product image thumb"></div>
+                                        <div class="sm-image"><img src="~/Asset/~/Asset/images/product/small-size/3.jpg" alt="product image thumb"></div>
+                                        <div class="sm-image"><img src="~/Asset/~/Asset/images/product/small-size/4.jpg" alt="product image thumb"></div>
+                                        <div class="sm-image"><img src="~/Asset/~/Asset/images/product/small-size/5.jpg" alt="product image thumb"></div>
+                                        <div class="sm-image"><img src="~/Asset/~/Asset/images/product/small-size/6.jpg" alt="product image thumb"></div>
+                                    </div>
+                                </div>
+                                <!--// Product Details Left -->
+                            </div>
+
+                            <div class="col-lg-7 col-md-6 col-sm-6">
+                                <div class="product-details-view-content pt-60">
+                                    <div class="product-info">
+                                        <h2>Today is a good day Framed poster</h2>
+                                        <span class="product-details-ref">Reference: demo_15</span>
+                                        <div class="rating-box pt-20">
+                                            <ul class="rating rating-with-review-item">
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                <li class="review-item"><a href="#">Read Review</a></li>
+                                                <li class="review-item"><a href="#">Write Review</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box pt-20">
+                                            <span class="new-price new-price-2">$57.98</span>
+                                        </div>
+                                        <div class="product-desc">
+                                            <p>
+                                                <span>
+                                                    100% cotton double printed dress. Black and white striped top and orange high waisted skater skirt bottom. Lorem ipsum dolor sit amet, consectetur adipisicing elit. quibusdam corporis, earum facilis et nostrum dolorum accusamus similique eveniet quia pariatur.
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="product-variants">
+                                            <div class="produt-variants-size">
+                                                <label>Dimension</label>
+                                                <select class="nice-select">
+                                                    <option value="1" title="S" selected="selected">40x60cm</option>
+                                                    <option value="2" title="M">60x90cm</option>
+                                                    <option value="3" title="L">80x120cm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="single-add-to-cart">
+                                            <form action="#" class="cart-quantity">
+                                                <div class="quantity">
+                                                    <label>Quantity</label>
+                                                    <div class="cart-plus-minus">
+                                                        <input class="cart-plus-minus-box" value="1" type="text">
+                                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                    </div>
+                                                </div>
+                                                <button class="add-to-cart" type="submit">Add to cart</button>
+                                            </form>
+                                        </div>
+                                        <div class="product-additional-info pt-25">
+                                            <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a>
+                                            <div class="product-social-sharing pt-25">
+                                                <ul>
+                                                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
+                                                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i>Google +</a></li>
+                                                    <li class="instagram"><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quick View | Modal Area End Here -->
+    </div>
+    <!-- Body Wrapper End Here -->
+    <!-- jQuery-V1.12.4 -->
+    <script src="~/Asset/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/Asset/js/vendor/popper.min.js"></script>
+    <!-- Bootstrap V4.1.3 Fremwork js -->
+    <script src="~/Asset/js/bootstrap.min.js"></script>
+    <!-- Ajax Mail js -->
+    <script src="~/Asset/js/ajax-mail.js"></script>
+    <!-- Meanmenu js -->
+    <script src="~/Asset/js/jquery.meanmenu.min.js"></script>
+    <!-- Wow.min js -->
+    <script src="~/Asset/js/wow.min.js"></script>
+    <!-- Slick Carousel js -->
+    <script src="~/Asset/js/slick.min.js"></script>
+    <!-- Owl Carousel-2 js -->
+    <script src="~/Asset/js/owl.carousel.min.js"></script>
+    <!-- Magnific popup js -->
+    <script src="~/Asset/js/jquery.magnific-popup.min.js"></script>
+    <!-- Isotope js -->
+    <script src="~/Asset/js/isotope.pkgd.min.js"></script>
+    <!-- Imagesloaded js -->
+    <script src="~/Asset/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Mixitup js -->
+    <script src="~/Asset/js/jquery.mixitup.min.js"></script>
+    <!-- Countdown -->
+    <script src="~/Asset/js/jquery.countdown.min.js"></script>
+    <!-- Counterup -->
+    <script src="~/Asset/js/jquery.counterup.min.js"></script>
+    <!-- Waypoints -->
+    <script src="~/Asset/js/waypoints.min.js"></script>
+    <!-- Barrating -->
+    <script src="~/Asset/js/jquery.barrating.min.js"></script>
+    <!-- Jquery-ui -->
+    <script src="~/Asset/js/jquery-ui.min.js"></script>
+    <!-- Venobox -->
+    <script src="~/Asset/js/venobox.min.js"></script>
+    <!-- Nice Select js -->
+    <script src="~/Asset/js/jquery.nice-select.min.js"></script>
+    <!-- ScrollUp js -->
+    <script src="~/Asset/js/scrollUp.min.js"></script>
+    <!-- Main/Activator js -->
+    <script src="~/Asset/js/main.js"></script>
+</body>
+
+<!-- index30:23-->
+</html>

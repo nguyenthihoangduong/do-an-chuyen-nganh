@@ -1,0 +1,206 @@
+﻿@model  PetproShopConnection.SanPham
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*<div class="breadcrumb-area">*@
+    <div class="container">
+        <div class="breadcrumb-content">
+            <ul>
+                <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+                <li>@Html.ActionLink("Details", "Index", "ThoiTrang")</li>
+            </ul>
+        </div>
+    </div>
+@*</div>*@
+<!-- Li's Breadcrumb Area End Here -->
+<!-- content-wraper start -->
+<div class="content-wraper">
+    <div class="container">
+        <div class="row single-product-area">
+            <div class="col-lg-5 col-md-6">
+                <!-- Product Details Left -->
+                <div class="product-details-left">
+                    <div class="product-details-images slider-navigation-1">
+                        <div class="lg-image">
+                            <a class="popup-img venobox vbox-item" href="~/Asset/images1/@Model.Hinh1" data-gall="myGallery">
+                                <img src="~/Asset/images1/@Model.Hinh1" width="500" height="500" alt="product image">
+                            </a>
+                        </div>
+                        <div class="lg-image">
+                            <a class="popup-img venobox vbox-item" href="~/Asset/images1/@Model.Hinh2" data-gall="myGallery">
+                                <img src="~/Asset/images1/@Model.Hinh2" width="500" height="500" alt="product image">
+                            </a>
+                        </div>
+                        <div class="lg-image">
+                            <a class="popup-img venobox vbox-item" href="~/Asset/images1/@Model.Hinh3" data-gall="myGallery">
+                                <img src="~/Asset/images1/@Model.Hinh3" width="500" height="500" alt="product image">
+                            </a>
+                        </div>
+                        <div class="lg-image">
+                            <a class="popup-img venobox vbox-item" href="~/Asset/images1/@Model.Hinh1" data-gall="myGallery">
+                                <img src="~/Asset/images1/@Model.Hinh1" width="500" height="500" alt="product image">
+                            </a>
+                        </div>
+                        <div class="lg-image">
+                            <a class="popup-img venobox vbox-item" href="~/Asset/images1/@Model.Hinh2" data-gall="myGallery">
+                                <img src="~/Asset/images1/@Model.Hinh2" width="500" height="500" alt="product image">
+                            </a>
+                        </div>
+                        <div class="lg-image">
+                            <a class="popup-img venobox vbox-item" href="~/Asset/images1/@Model.Hinh3" data-gall="myGallery">
+                                <img src="~/Asset/images1/@Model.Hinh3" width="500" height="500" alt="product image">
+                            </a>
+                        </div>
+                    </div>
+                    
+                        <div class="product-details-thumbs slider-thumbs-1">
+                            <div class="sm-image"><img src="~/Asset/images1/@Model.Hinh1" alt="product image thumb"></div>
+                            <div class="sm-image"><img src="~/Asset/images1/@Model.Hinh2" alt="product image thumb"></div>
+                            <div class="sm-image"><img src="~/Asset/images1/@Model.Hinh3" alt="product image thumb"></div>
+                            <div class="sm-image"><img src="~/Asset/images1/@Model.Hinh1" alt="product image thumb"></div>
+                            <div class="sm-image"><img src="~/Asset/images1/@Model.Hinh2" alt="product image thumb"></div>
+                            <div class="sm-image"><img src="~/Asset/images1/@Model.Hinh3" alt="product image thumb"></div>
+                        </div>
+                    
+                </div>
+                <!--// Product Details Left -->
+            </div>
+
+            <div class="col-lg-7 col-md-6">
+                <div class="product-details-view-content pt-60">
+                    <div class="product-info">
+                        <h2>@Model.TenSP</h2>
+                        <span class="product-details-ref">Reference: demo_15</span>
+                        <div class="rating-box pt-20">
+                            <ul class="rating rating-with-review-item">
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="review-item"><a href="#">Read Review</a></li>
+                                <li class="review-item"><a href="#">Write Review</a></li>
+                            </ul>
+                        </div>
+                        <div class="price-box pt-20">
+                            <span class="new-price new-price-2">@Model.Gia.Value.ToString("#,##") VNĐ</span>
+                        </div>
+                        <div class="product-desc">
+                            <p>
+                                <span>
+                                    @Model.MoTa
+                                </span>
+                            </p>
+                        </div>
+                        <div class="product-variants">
+                            <div class="produt-variants-size">
+                                <label>Kích Thước</label>
+                                <select class="nice-select">
+                                    <option value="1" title="S" selected="selected">Lớn</option>
+                                    <option value="2" title="M">Vừa</option>
+                                    <option value="3" title="L">Nhỏ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="single-add-to-cart">
+                            <form action="#" class="cart-quantity">
+                                <div class="quantity">
+                                    <label>Số Lượng</label>
+                                    <div class="cart-plus-minus">
+                                        <input class="cart-plus-minus-box" value="1" type="text">
+                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart" type="submit"><a href="@Url.Action("ThemVaoGio", "GioHang", new { sanPhamID = Url.RequestContext.RouteData.Values["id"] })"> <span class="glyphicon glyphicon-shopping-cart"></span>Thêm Vào Giỏ</a></button>
+                            </form>
+                        </div>
+                        <div class="product-additional-info pt-25">
+                            <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a>
+                            <div class="product-social-sharing pt-25">
+                                <ul>
+                                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
+                                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i>Google +</a></li>
+                                    <li class="instagram"><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="block-reassurance">
+                            <ul>
+                                <li>
+                                    <div class="reassurance-item">
+                                        <div class="reassurance-icon">
+                                            <i class="fa fa-check-square-o"></i>
+                                        </div>
+                                        <p>Security policy (edit with Customer reassurance module)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reassurance-item">
+                                        <div class="reassurance-icon">
+                                            <i class="fa fa-truck"></i>
+                                        </div>
+                                        <p>Delivery policy (edit with Customer reassurance module)</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reassurance-item">
+                                        <div class="reassurance-icon">
+                                            <i class="fa fa-exchange"></i>
+                                        </div>
+                                        <p> Return policy (edit with Customer reassurance module)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="product-area li-laptop-product li-trendding-products best-sellers pb-45">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Li's Section Area -->
+            <div class="product-area pt-60 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="li-product-tab">
+                                <ul class="nav li-product-menu">
+                                    <li><a class="active" data-toggle="tab" href="#li-new-product"><span>Sản Phẩm Mới</span></a></li>
+                                    <li><a data-toggle="tab" href="#li-bestseller-product"><span>Sản Phẩm Hót</span></a></li>
+                                    <li><a data-toggle="tab" href="#li-featured-product"><span>Khuyến Mãi</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- Begin Li's Tab Menu Content Area -->
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div id="li-new-product" class="tab-pane active show" role="tabpanel">
+                            @Html.Partial("_SPmoi", doanchuyennganh.Models.BUS.PetproShopBUS.Top5New())
+                        </div>
+                        <div id="li-bestseller-product" class="tab-pane" role="tabpanel">
+                            @Html.Partial("_SPmoi", doanchuyennganh.Models.BUS.PetproShopBUS.Top5Hot())
+                        </div>
+                        <div id="li-featured-product" class="tab-pane" role="tabpanel">
+                            @Html.Partial("_SPKM", doanchuyennganh.Models.BUS.PetproShopBUS.TopKM())
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- Li's Section Area End Here -->
+        </div>
+    </div>
+</section>
+
+
+
+

@@ -1,0 +1,17 @@
+﻿<li class="megamenu-static-holder">
+    <a href="index.html">Cửa Hàng</a>
+    <ul class="hb-dropdown">
+        <li>
+
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li><a href="@Url.Action("Index", "CuaHang", new { id = @item.MaLoaiSP })">@item.TenLoaiSP</a></li>
+                }
+            </ul>
+        </li>
+
+    </ul>
+</li>
+
+
