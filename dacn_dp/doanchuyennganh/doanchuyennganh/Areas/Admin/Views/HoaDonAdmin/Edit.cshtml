@@ -1,15 +1,8 @@
-﻿
+﻿@model PetproShopConnection.ThanhToan
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
 }
-
-
-@{
-    ViewBag.Title = "Create";
-    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
-}
-
 <style>
     input[type=text], select {
         width: 100%;
@@ -51,52 +44,48 @@
         }
 </style>
 
-@using (Html.BeginForm("Create", "HoaDonAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Edit", "HoaDonAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <table style="width:60%; margin:auto; background:white; color:black">
-        <tr>
-            <td>Mã Thanh Toán</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="MaTT" required /></td>
-            <td rowspan="13"></td>
-        </tr>
+        
         <tr>
             <td>Họ Tên Khách Hàng</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="HoTenKH" required /></td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="HoTenKH" value="@Model.HoTenKH" required /></td>
             <td rowspan="13"></td>
         </tr>
         <tr>
             <td>Số Điện Thoại</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="SoDT" required /></td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="SoDT" value="@Model.SoDT" required /></td>
             <td rowspan="13"></td>
         </tr>
         <tr>
             <td>Email</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="Email" required /></td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="Email" value="@Model.Email" required /></td>
             <td rowspan="13"></td>
         </tr>
         <tr>
             <td>Địa Chỉ</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="DiaChiNhanHang" required /></td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="DiaChiNhanHang" value="@Model.DiaChiNhanHang" required /></td>
             <td rowspan="13"></td>
         </tr>
         <tr>
             <td>Tỉnh/Thành Phố</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="TinhThanh" required /></td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="TinhThanh" value="@Model.TinhThanh" required /></td>
             <td rowspan="13"></td>
         </tr>
         <tr>
             <td>Quận/Huyện</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="QuanHuyen" required /></td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="QuanHuyen" value="@Model.QuanHuyen" required /></td>
             <td rowspan="13"></td>
         </tr>
         <tr>
             <td>Ghi Chú</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="GhiChu" required /></td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="GhiChu" value="@Model.GhiChu" required /></td>
             <td rowspan="13"></td>
         </tr>
         <tr>
             <td>Tình Trạng</td>
-            <td> <input style="width:300px; float:left; height:35px " type="text" name="TinhTrang" required /></td>
+            <td> <input style="width:300px; float:left; height:35px " type="text" name="TinhTrang" value="@Model.TinhTrang" required /></td>
             <td rowspan="13"></td>
         </tr>
         <tr>

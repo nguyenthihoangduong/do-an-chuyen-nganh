@@ -1,9 +1,11 @@
-﻿using PetproShopConnection;
+﻿using doanchuyennganh.Models.BUS;
+using PetproShopConnection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace doanchuyennganh.Controllers
 {
@@ -16,8 +18,6 @@ namespace doanchuyennganh.Controllers
             return View(giohang);
 
         }
-
-
         public RedirectToRouteResult ThemVaoGio(string SanPhamID)
         {
             if (Session["giohang"] == null) // Nếu giỏ hàng chưa được khởi tạo
@@ -83,5 +83,37 @@ namespace doanchuyennganh.Controllers
             }
             return RedirectToAction("Index");
         }
+        public ActionResult IndexDatHang()
+        {
+            var ds = ThanhToanBUS.DanhSachHD();
+            return View(ds);
+        }
+
+        public ActionResult TaoTrangDatHang()
+        {
+            Index();
+            ViewBag.GioHang = Session["giohang"] as List<GioHangItem>; //Index();
+            ViewBag.MaPTTT = new SelectList(PTTTBUS.DanhSachPT(), "MaPTTT", "TenPTTT");
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TaoTrangDatHang(ThanhToan tt)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+                ThanhToanBUS.ThemHD(tt);
+                return RedirectToAction("IndexDatHang", "GioHang");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
+
+
+
+
+
 }

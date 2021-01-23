@@ -1,0 +1,207 @@
+﻿@model PagedList.IPagedList<PetproShopConnection.SanPham>
+@using doanchuyennganh.Models;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "KQTimKiem";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="container">
+    <div class="breadcrumb-content">
+        <ul>
+            <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+            <li>@Html.ActionLink("Tìm Kiếm", "KQTimKiem", "TimKiem")</li>
+        </ul>
+    </div>
+</div>
+
+<div class="content-wraper pt-60 pb-60 pt-sm-30">
+    <div class="container">
+        <div class="row">
+
+            <div id="main-content" class="col-lg-9 order-1 order-lg-2">
+                <div class="shop-products-wrapper">
+                    <div class="tab-content">
+                        <div id="grid-view" class="tab-pane fade active show" role="tabpanel">
+                            <div class="product-area shop-product-area">
+                                <h3 style="text-align:center; background-color:#f4f4f4">Kết Quả Tìm Kiếm Của Bạn</h3>
+                                <div class="row">                                    
+
+                                    @foreach (var item in Model.OrderBy(n => n.Gia))
+                                    {
+
+                                        <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
+                                            <!-- single-product-wrap start -->
+                                            <div class="single-product-wrap">
+                                                <div class="product-image">
+                                                    <a href="@Url.Action("Details", "ThoiTrang", new { id = @item.MaSP })">
+                                                        <img src="~/Asset/images1/@item.HinhChinh" width="300" height="310" alt="Li's Product Image">
+                                                    </a>
+                                                    <span class="sticker">New</span>
+                                                </div>
+                                                <div class="product_desc">
+                                                    <div class="product_desc_info">
+                                                        <div class="product-review">
+                                                            <h5 class="manufacturer">
+                                                                <a href="product-details.html">Graphic Corner</a>
+                                                            </h5>
+                                                            <div class="rating-box">
+                                                                <ul class="rating">
+                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                    <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <h4><a href="@Url.Action("Details", "ThoiTrang", new { id = @item.MaSP })">@item.TenSP</a></h4>
+                                                        <div class="price-box">
+                                                            <span class="new-price">@item.Gia.Value.ToString("#,##") VNĐ</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="add-actions">
+                                                        <ul class="add-actions-link">
+                                                            <li class="add-cart active"><a href="@Url.Action("Details", "ThoiTrang", new { id = @item.MaSP })">Add to cart</a></li>
+                                                            <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
+                                                            <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- single-product-wrap end -->
+                                        </div>
+
+
+                                        @*<div class="col-md-4 product-left p-left">
+                                            <div class="product-main simpleCart_shelfItem">
+                                                <a href="@Url.Action("XemChiTiet", "SanPham", new {@Id = item.MaSP})" class="mask"><img class="img-responsive zoom-img" src="@Url.Content("~/Asset/images/" + @item.HinhChinh)" alt="Thú Cưng Petpro" style="width:250px;height:250px"></a>
+                                                <div class="product-bottom">
+                                                    <div>@item.TenSP</div>
+                                                    ------<h4> <a class="item_add" href="@Url.Action("ThemGioHang", "GioHang", new { @IdSanPham = item.IdSanPham, @strUrl= Request.Url.ToString() })"><i></i></a> <span class=" item_price">@item.DonGia.Value.ToString("#,##")</span></h4>
+                                                    <h4><i></i><span style="color:red" class="item_price">@item.Gia.Value.ToString("#,##")</span></h4>
+                                                    <div class="Ajax" style="margin:0px;padding:5px">
+                                                        @Ajax.ActionLink("Thêm Giỏ Hàng", "ThemGioHangAjax", "GioHang", new { @IdSanPham = item.MaSP, @strUrl = Request.Url.ToString() }, new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "divGioHang", InsertionMode = InsertionMode.Replace }, new { @class = "btn btn-success" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>*@
+                                    }
+                                    <div class="clearfix"></div>
+                                    <div class="dlink" style="margin:5px;padding:10px">
+                                        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+                                        @Html.PagedListPager(Model, page => @Url.Action("KQTimKiem", new { @page = page, @sTuKhoa = ViewBag.TuKhoa }))
+                                    </div>
+
+
+                                    
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 order-2 order-lg-1">
+                <!--sidebar-categores-box start  -->
+                <div class="sidebar-categores-box mt-sm-30 mt-xs-30">
+                    <div class="sidebar-title">
+                        <h2 style="text-align:center">Sản Phẩm</h2>
+                    </div>
+                    <!-- category-sub-menu start -->
+                    <div class="category-sub-menu">
+                        <ul>
+
+                            <li>
+                                <i style="color:#000000" class="fa fa-check" aria-hidden="true"></i><a style="color:#0094ff; padding-left:1em" href="http://localhost:57835/CuaHang/Index/LSP01">Thời Trang Cho Chó Mèo</a>
+                            </li>
+                            <li>
+                                <i style="color:#000000" class="fa fa-check" aria-hidden="true"></i><a style="color:#0094ff; padding-left:1em" href="http://localhost:57835/CuaHang/Index/LSP02">Dụng Cụ Hàng Ngày</a>
+                            </li>
+                            <li>
+                                <i style="color:#000000" class="fa fa-check" aria-hidden="true"></i><a style="color:#0094ff; padding-left:1em" href="http://localhost:57835/CuaHang/Index/LSP03">Thức Ăn Cho Chó Mèo</a>
+                            </li>
+                            <li>
+                                <i style="color:#000000" class="fa fa-check" aria-hidden="true"></i><a style="color:#0094ff; padding-left:1em" href="http://localhost:57835/CuaHang/Index/LSP04">Các Loại Thuốc Cho Chó Mèo</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- category-sub-menu end -->
+                </div>
+                <!--sidebar-categores-box end  -->
+                <!--sidebar-categores-box start  -->
+                <div class="sidebar-categores-box">
+                    <div class="sidebar-title">
+                        <h2 style="text-align:center">Các Cơ Sở PetPro</h2>
+                    </div>
+                    <div class="pt-sm-10 pb-sm-15 pb-xs-15">
+
+                        <h6 style="padding-top:1em">Thú-Y Petpro 1:</h6>
+                        <span>Address:</span><a href="https://map.coccoc.com/map/13233965271225801"><span style="color:#0094ff">192/7 Phú Thọ Hòa, P. Phú Thọ Hòa, Q. Tân Phú, TP. HCM</span></a>
+                        <br />Phone:<a href="tel:0913 949 041"><span style="color:#0094ff">0913 949 041</span></a><a href="tel:02838 612977">-<span style="color:#0094ff">(028) 38 612977</span></a>
+                        <br />Facebook:<a href="https://www.facebook.com/thuypetpro.com.vn/"><span style="color:#0094ff">thuypetpro.com.vn</span></a>
+                        <div>-----------------------------------</div>
+
+                        <h6>Thú-Y Petpro 2:</h6>
+                        <span>Address:</span><a href="https://map.coccoc.com/map/136593830672798"><span style="color:#0094ff">387-389 Cộng Hòa, P. 13, Q. Tân Bình, TP. HCM</span></a>
+                        <br />Phone:<a href="tel:0917 710 311"><span style="color:#0094ff">0917 710 311</span></a><a href="tel:02862 972 290">-<span style="color:#0094ff">(028) 62 972 290</span></a>
+                        <br />Facebook:<a href="https://www.facebook.com/thuypetpro.com.vn/"><span style="color:#0094ff">thuypetpro.com.vn</span></a>
+                        <div>-----------------------------------</div>
+
+                        <h6>Thú-Y Petpro 3:</h6>
+                        <span>Address:</span><a href="https://map.coccoc.com/map/1235125498726361"><span style="color:#0094ff">111 Trường Chinh, P. 12 Q. Tân Bình TP. HCM</span></a>
+                        <br />Phone:<a href="tel:0916 219 211"><span style="color:#0094ff">0916 219 211</span></a>
+                        <br />Facebook:<a href="https://www.facebook.com/thuypetpro.com.vn/"><span style="color:#0094ff">thuypetpro.com.vn</span></a>
+                        <div>-----------------------------------</div>
+
+                        <h6>Thú-Y Petpro 4:</h6>
+                        <span>Address:</span><a href="https://www.google.com/search?rlz=1C1SQJL_enVN866VN866&tbm=lcl&ei=-XS1XqPfA4StoAS0gL34Dg&q=216+Nguy%E1%BB%85n+Th%E1%BB%8B+T%C3%BA%2C+P.+B%C3%ACnh+H%C6%B0ng+H%C3%B2a+B%2C+Q.+B%C3%ACnh+T%C3%A2n%2C+TP.+HCM&oq=216+Nguy%E1%BB%85n+Th%E1%BB%8B+T%C3%BA%2C+P.+B%C3%ACnh+H%C6%B0ng+H%C3%B2a+B%2C+Q.+B%C3%ACnh+T%C3%A2n%2C+TP.+HCM&gs_l=psy-ab.3..0i333k1.73375.73375.0.75657.1.1.0.0.0.0.334.334.3-1.1.0....0...1c.1.64.psy-ab..0.1.333....0.rDvdRVBRSJk#rlfi=hd:;si:13989375317418328690;mv:[[10.815522377319029,106.58969603206295],[10.81516242268097,106.58932956793707]]"><span style="color:#0094ff">216 Nguyễn Thị Tú, P. Bình Hưng Hòa B, Q. Bình Tân, TP. HCM</span></a>
+                        <br />Phone:<a href="tel:0912 219 211"><span style="color:#0094ff">0912 219 211</span></a>
+                        <br />Facebook:<a href="https://www.facebook.com/thuypetpro.com.vn/"><span style="color:#0094ff">thuypetpro.com.vn</span></a>
+                        <div>-----------------------------------</div>
+
+                        <h6>Thú-Y Petpro 5:</h6>
+                        <span>Address:</span><a href="https://www.foody.vn/ho-chi-minh/petpro-shop-cho-thu-cung-kinh-duong-vuong"><span style="color:#0094ff">493 Đường Kinh Dương Vương, Khu Phố 6, Phường An Lạc, Quận Bình Tân, TP. HCM</span></a>
+                        <br />Phone:<a href="tel:0911 368 041"><span style="color:#0094ff">0911 368 041</span></a>
+                        <br />Facebook:<a href="https://www.facebook.com/thuypetpro.com.vn/"><span style="color:#0094ff">thuypetpro.com.vn</span></a>
+                        <div>-----------------------------------</div>
+
+                        <h6>Thú-Y Petpro 6:</h6>
+                        <span>Address:</span><a href="https://www.foody.vn/vung-tau/petpro-shop-cho-thu-cung-nguyen-an-ninh/nearby"><span style="color:#0094ff">383 Đường Nguyễn An Ninh, Khu Phố 6, Phường 9, TP. Vũng Tàu, Bà Rịa – Vũng Tàu</span></a>
+                        <br />Phone:<a href="tel:0919 949 041"><span style="color:#0094ff">0919 949 041</span></a>
+                        <br />Facebook:<a href="https://www.facebook.com/thuypetpro.com.vn/"><span style="color:#0094ff">thuypetpro.com.vn</span></a>
+
+
+                    </div>
+                    <!-- filter-sub-area end -->
+                </div>
+                <!--sidebar-categores-box end  -->
+                <!-- category-sub-menu start -->
+                <div class="sidebar-categores-box mb-sm-0 mb-xs-0">
+                    <div class="sidebar-title">
+                        <h2 style="text-align:center">Nhà Sản Xuất</h2>
+                    </div>
+                    <div class="category-tags">
+                        <ul>
+                            <li><a style="color:#0094ff" href="http://localhost:57835/NhaSanXuat/Index/NSX01">Royal canin</a></li>
+                            <li><a style="color:#0094ff" href="http://localhost:57835/NhaSanXuat/Index/NSX02">Fitmin</a></li>
+                            <li><a style="color:#0094ff" href="http://localhost:57835/NhaSanXuat/Index/NSX03">Cat Eye</a></li>
+                            <li><a style="color:#0094ff" href="http://localhost:57835/NhaSanXuat/Index/NSX04">Whiskas</a></li>
+                            <li><a style="color:#0094ff" href="http://localhost:57835/NhaSanXuat/Index/NSX05">Meo-O</a></li>
+                            <li><a style="color:#0094ff" href="http://localhost:57835/NhaSanXuat/Index/NSX06">CityZoo</a></li>
+                            <li><a style="color:#0094ff" href="http://localhost:57835/NhaSanXuat/Index/NSX07">Forcans</a></li>
+                            <li><a style="color:#0094ff" href="http://localhost:57835/NhaSanXuat/Index/NSX08">Pedigree</a></li>
+
+                        </ul>
+                    </div>
+                    <!-- category-sub-menu end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

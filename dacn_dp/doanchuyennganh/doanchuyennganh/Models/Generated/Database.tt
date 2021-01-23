@@ -1,6 +1,6 @@
 <#@ include file="PetaPoco.Core.ttinclude" #>
 <#
-	// Settings                
+	// Settings                     
     ConnectionStringName = "PetproShopConnection";			// Uses last connection string in config if not specified
     Namespace = "";
     RepoName = "";    
@@ -11,11 +11,11 @@
 	ClassSuffix = "";
 	TrackModifiedColumns = false;
 	ExplicitColumns = true;
-	ExcludePrefix = new string[] {}; // Exclude tables by prefix.
+	ExcludePrefix = new string[] {}; // Exclude tables by prefix. 
 
     // Read schema
 	var tables = LoadTables();
-
+	 
 	 
 /*
 	// Tweak Schema

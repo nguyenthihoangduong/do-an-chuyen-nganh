@@ -755,54 +755,6 @@ namespace PetproShopConnection
 
     
 
-	[TableName("dbo.sysdiagrams")]
-
-
-
-	[PrimaryKey("diagram_id")]
-
-
-
-
-	[ExplicitColumns]
-
-    public partial class sysdiagram : PetproShopConnectionDB.Record<sysdiagram>  
-    {
-
-
-
-		[Column] public string name { get; set; }
-
-
-
-
-
-		[Column] public int principal_id { get; set; }
-
-
-
-
-
-		[Column] public int diagram_id { get; set; }
-
-
-
-
-
-		[Column] public int? version { get; set; }
-
-
-
-
-
-		[Column] public byte[] definition { get; set; }
-
-
-
-	}
-
-    
-
 	[TableName("dbo.ThanhToan")]
 
 

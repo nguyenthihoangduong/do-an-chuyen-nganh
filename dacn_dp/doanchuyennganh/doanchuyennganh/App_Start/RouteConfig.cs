@@ -120,7 +120,31 @@ namespace doanchuyennganh
                 url: "dang-nhap",
                 defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
             );
-            
+
+            routes.MapRoute(
+                name: "Quan Ly Nha San Xuat",
+                url: "quan-ly-nha-san-xuat",
+                defaults: new { controller = "NhaSanXuatAdmin", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Quan Ly Loai San Pham",
+                url: "quan-ly-loai-san-pham",
+                defaults: new { controller = "LoaiSanPhamAdmin", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Quan Ly San Pham",
+                url: "quan-ly-san-pham",
+                defaults: new { folder = "Admin", controller = "SanPhamAdmin", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Quan Ly Don Dat Hang",
+                url: "quan-ly-don-dat-hang",
+                defaults: new { controller = "HoaDonAdmin", action = "Index", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
